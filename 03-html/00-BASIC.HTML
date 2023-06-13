@@ -70,14 +70,79 @@
     <h2>link 태그</h2>
    </header>
    <section>
-    <a href="https://www.w3schools.com/html/html_links.asp" target="_blank">HTML LINK</a>
+    <!-- 절대 경로 -->
+    <a href="https://naver.com" target="_blank">html link</a> 
+    <!-- 상대 경로 -->
+    <a href="./01-layout.html" target="_blank">layout.html</a>
+    <a href="./images/01-01-daisy-w.jpeg" target="_blank">daisy image</a>
+    <a href="images/01-01-daisy-w.jpeg">daisy image2</a>
+    <a href="mailto:jsjh5934@naver.com" >send mail</a>
+    <!-- 웹 접근성 -->
+    <a href="https://www.naver.com" target="_blank" title="새창열림">네이버</a>
+    <a href="#main">메인 바로가기</a>  
+    <a href="./sub/sub.html#sec3" target="_blank">id 값이 sec3 바로가기</a>
+    <a href="./sub/sub.html#sec2" target="_blank">id 값이 sec2 바로가기</a>
    </section>
 
+    <header>
+      <h2>images 태그</h2>
+    </header>
+    <section>
+     <!-- 상대 경로 -->
+      <!-- width / heigjt 단위 생략 (가로 입력하면 세로 자동지정됨, 보통 가로만 입력) -->
+    <img src="./images/01-01-daisy-w.jpeg" alt="daisy" width="200">
+    <img src="./images/01-01-daisy-w.jpeg" alt="daisy" style="width: 300px;">
+    <!-- 절대 경로 -->
+    <a href="https://ssl.pstatic.net/melona/libs/1448/1448943/5f2b30195778b47f373d_20230516112221025_3.jpg" target="_blank"  title="새창열림">
+    <img src="https://ssl.pstatic.net/melona/libs/1448/1448943/5f2b30195778b47f373d_20230516112221025_3.jpg" alt="감탄브라 작년 베스트셀러가 업그레이드 출시! 더 시원해진 인견쿨 최대71% 할인" width="100%">
+   </a>
+
+   <!-- 반응형 이미지 -->
+   <picture>
+    <!-- width 650px 이상일 경우 -->
+     <source media="(min-width:650px)" srcset="images\img_food.jpg">
+    <!-- width 465px 이상일 경우 -->
+    <source media="(min-width:465px)" srcset="images\img_car.jpg">
+    <img src="./images/171123-nachoi-300.jpg" alt="심슨" >
+   </picture>
+  </section>
+
+  <header>
+    <h2>table 태그</h2>
+  </header>
+  <section>
+    <table>
+      <caption>테이블 설명 : 자세한 설명</caption>
+      <colgroup>
+        <col width="40%">
+        <col span="3">
+      </colgroup>
+      <thead>
+        
+      </thead>
+    </table>
+  </section>
+
+
+
+   <section id="nav">
+    <h2>nav</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias incidunt rerum sit fugit unde blanditiis nesciunt. Assumenda distinctio, deserunt minus officiis est cum accusantium incidunt odio asperiores numquam, fugit error.</p>
+   </section>
+   <section>
+    <h2>c1</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias incidunt rerum sit fugit unde blanditiis nesciunt. Assumenda distinctio, deserunt minus officiis est cum accusantium incidunt odio asperiores numquam, fugit error.</p>
+   </section>
+   <section id="main">
+    <h2>main</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias incidunt rerum sit fugit unde blanditiis nesciunt. Assumenda distinctio, deserunt minus officiis est cum accusantium incidunt odio asperiores numquam, fugit error.</p>
+    <a href="#nav">nav 바로가기</a>
+   
+  </section>
   </div>
   <!-- 주석 태그 (ctrl + /) -->
   <p>안녕 <!-- 헤헤헤헤헤헤 --></p>
 
-  000
 
 </body>
 </html>
