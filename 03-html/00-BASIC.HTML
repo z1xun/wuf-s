@@ -112,18 +112,207 @@
   </header>
   <section>
     <table>
+      <!-- 웹접근성 요건 추가 -->
       <caption>테이블 설명 : 자세한 설명</caption>
       <colgroup>
-        <col width="40%">
-        <col span="3">
+        <!-- span : 열갯수 --> 
+       <col>
+       <col width="20%">
+       <col span="4" width="10%">
+
       </colgroup>
-      <thead>
-        
+        <!-- 테이블의 구분 -->
+        <thead>
+          <tr>
+            <th scope="col" rowspan="2" colspan="2">과목</th>
+            <th scope="col" colspan="4">1학년 1반</th>
+          </tr>
+          <tr>
+            <th scope="col">윤진</th>
+            <th scope="col">즈하</th>
+            <th scope="col">쿠라</th>
+            <th scope="col">채원</th>
+          </tr>
       </thead>
+      <tbody>
+        <!-- 테이블의 본문 -->
+        <tr>
+          <th scope="row" rowspan="3">공통</th>
+          <th scope="row">국어</th>
+          <td>56</td>
+          <td>66</td>
+          <td>87</td>
+          <td>55</td>
+        </tr>
+       
+        <tr>
+          <th scope="row">영어</th>
+          <td>46</td>
+          <td>78</td>
+          <td>11</td>
+          <td>20</td>
+        </tr>
+       
+        <tr>
+          <th scope="row">수학</th>
+          <td>46</td>
+          <td>78</td>
+          <td>11</td>
+          <td>20</td>
+        </tr>
+      </tbody>
+      <!-- 테이블 요약 -->
+      <tfoot>
+        <tr>
+          <th scope="row" colspan="2">평균</th>
+          <td>88</td>
+          <td>48</td>
+          <td>84</td>
+          <td>99</td>
+        </tr>
+      </tfoot>
     </table>
   </section>
 
+  <style>
+    table, tr, td, th {
+      border: 3px solid #f90000;
+    }
+    table {
+      width: 100%;
+    }
+    td {
+      height: 20px;
+    }
+    thead {
+      background: #e1e747;
+    }
+    tfoot {
+      background: #d3d2d2;
+    }
+  </style>
+     
+     <header>
+      <h2>list 태그</h2>
+    </header>
+    <section>
+      <h3>좋아하는 동물</h3>
+      <!-- 순서 없는 목록 -->
+      <ul>
+        <li>고양이</li>
+        <li>강아지</li>
+        <li>팬더</li>
+      </ul>
 
+
+      <!-- 순서 있는 목록 -->
+      <ol>
+        <li>고양이</li>
+        <li>강아지</li>
+        <li>팬더</li>
+      </ol>
+
+      <!-- nav -->
+      <h3>메인메뉴</h3>
+      <!--depth1  -->
+      <ul>
+        <li>
+          탑
+          <!-- depth2 -->
+          <ul>
+            <li>블라우스
+               <ul>
+                <li>depth3</li>
+                <li>depth3</li>
+                <li>depth3</li>
+              </ul>
+            </li>
+            <li>티</li>
+            <li>셔츠</li>
+            <li>니트</li>
+          </ul>
+        </li>
+        <li>
+          아우터
+          <ul>
+            <li>자켓</li>
+            <li>코트</li>
+            <li>가디건
+              <ul>
+                <li>depth3</li>
+                <li>depth3</li>
+                <li>depth3</li>
+              </ul>
+            </li>
+            <li>머플러</li>
+          </ul>
+        </li>
+        <li>
+          팬츠
+          <ul>
+            <li>청바지</li>
+            <li>짧은바지</li>
+            <li>긴바지</li>
+            <li>레깅스</li>
+          </ul>
+        </li>
+        <li>
+          악세사리
+          <ul>
+            <li>레깅스</li>
+            <li>목걸이</li>
+            <li>반지</li>
+            <li>팔찌</li>
+          </ul>
+        </li>
+      </ul>
+      
+      <ul>
+        <li>
+          <a href="#">depth1</a>
+          <ul>
+            <li>
+              <a href="#">depth2</a>
+            </li>
+            <li>
+              <a href="#">depth2</a>
+              <ul>
+                <li>
+                  <a href="#">depth3</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">depth1</a>
+          <ul>
+            <li>
+              <a href="#">depth2</a>
+            </li>
+            <li>
+              <a href="#">depth2</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">depth1</a>
+          <ul>
+            <li>
+              <a href="#">depth2</a>
+            </li>
+          </ul>
+        </li>        
+        <li>
+          <a href="#">depth1</a>
+          <ul>
+            <li>
+              <a href="#">depth2</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
 
    <section id="nav">
     <h2>nav</h2>
