@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자|css</title>
+</head>
+<body>
+
+  <h1>선택자</h1>
+
+  <h2>태그 선택자</h2>
+
+  <div id="gnb">
+     <ul class="depth1">
+        <li class="fst">
+          <a href="#">메뉴1</a>
+          <ul class="depth2-1">
+            <li><a href="#">메뉴1-1</a></li>
+            <li><a href="#">메뉴1-2</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">메뉴2</a>
+          <ul class="depth2-2" >
+            <li><a href="#">메뉴2-1</a></li>
+            <li><a href="#">메뉴2-2</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">메뉴3</a>
+          <ul class="depth2-3">
+            <li><a href="#">메뉴3-1</a></li>
+            <li><a href="#">메뉴3-2</a></li>
+          </ul>
+        </li>
+        <li class="lst">
+          <a href="#">메뉴4</a>
+          <ul class="depth2-4">
+            <li><a href="#">메뉴4-1</a></li>
+            <li><a href="#">메뉴4-2</a></li>
+          </ul>
+         </li>
+       </ul>
+  </div>
+   
+  <style>
+    .depth1 >li > a {
+      border: 3px solid #a4d0f4;
+    }
+    #gnd {
+      border: 3px solid #edb1b1;
+    }
+    .depth2-1 {
+      border: 3px solid #b0e4b9;
+    }
+    .depth2-1 {
+      background: #bfbbf1;
+    }
+    .depth2-3  a {
+      border: 4px solid #f6cfee;
+    }
+    .lst > a, .fst > a {
+      background: #cff3f0;
+    }
+    ul {
+       border: 1px solid #000;  
+    }
+    li {
+      margin: 10px;
+       background: hsl(0, 59%, 89%);
+    }
+    ul li {
+      background: #fbd6d6;
+    }
+    ul.depth1 > li {
+      background: #fcfcfc;
+    }
+  
+  </style>
+</body>
+</html>
