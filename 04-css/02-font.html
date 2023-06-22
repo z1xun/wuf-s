@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font | css</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Lobster&display=swap" rel="stylesheet">
+  
+  <!-- 웹디자인 기능사용 reset -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      line-height: 1.5; 
+      color: #222328;
+      /* text-decoration: none; */
+      list-style: none;
+      box-sizing: border-box;
+      /* 안전 글꼴 */
+      font-family: "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>font</h1>
+
+  <h2>일반</h2>
+  <div class="font1">
+    <strong >타이틀</strong>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi reiciendis, cumque qui veritatis inventore neque, animi eveniet beatae esse modi veniam commodi dolores assumenda provident deserunt mollitia, officia similique maiores.</p>
+    <em>기울어짐<span>기울어짐</span></em> <br>
+    <b>기울어짐<span>볼드</span></b>
+  </div>  
+  
+
+  <style>
+    /* 폰트 단위 em 사용하는게 좋음!! */
+   .font1 p {
+    font-family: 'Bagel Fat One', cursive;
+   }
+    
+   .font1 strong {
+    font-family: 'Orbit', sans-serif;
+    font-size: 40px;
+    font-weight: normal;
+   }
+   .font1 b {
+    font-style: normal;
+    font-size: 30px;
+   }
+   .font1 em {
+     font-style: normal;
+     /* font-weight: bold; */
+     font-size: 60px;
+     font-family: 'Bagel Fat One', cursive;
+   }
+   .font1 span {
+    font-size: 3.750em;
+   }
+   .font1 em span { 
+    font-size: 1em;
+   }
+   .font1 b span {
+    /* rem : html, body 기준 폰트단위 */
+    font-size: 1rem;
+   }
+  </style>
+
+  <h2>font size</h2>
+  <div class="vw">responsive text</div>
+  <div class="vh">responsive text</div>
+  <style>
+   .vw {
+    font-size: 2vw;
+  }
+  .vw {
+    font-size:2vh;
+  }
+  </style>
+
+  <h2>text</h2>
+
+  <strong>vertical align</strong>
+  <div class="ver">
+   <img src="/images/free-icon-estadio-con-tres-banderas-78225.png" alt="home">w지지지지지지ㅣㅈ
+  </div>
+
+  <style>
+    .ver {
+      font-size: 50px;
+    }
+    .ver img {
+      vertical-align: middle;
+    }
+  </style>
+
+  <strong>decoration</strong>
+  <a href="#">글씨</a>
+
+  <style>
+    a {
+      text-decoration: none;
+    }
+  </style>
+
+</body>
+</html>
