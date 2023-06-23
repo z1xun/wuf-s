@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>boxmodel |css</title>
+
+  
+</head>
+<body>
+  <h1> 박스모델 </h1>
+
+  <h2>가로 사이즈</h2>
+
+  <div class="box1">
+    <span>span 태그</span> <span>span 태그</span>
+    <div>div태그</div>
+    <div>div태그</div>
+  </div>
+
+  <style>
+  .box1 {
+    background: #f48181;
+  }
+  .box1 span {
+    /* span 인라인 태그 : width, height 적용안됨 (적용안되는 것 자체가 auto) */
+    /* 가로사이즈 넣을경우, 블럭화 시켜주면 됨 display :blcok; */
+    display: block; 
+    width: 100px;
+    height: 100px;
+    background: #c8f569;
+  }
+
+  .box1 div {
+    /* div 블럭 태그 : width, height 들어감
+    auto 값 : 가로100% / 세로 0 -> 줄이고싶으면 사이즈 기입
+    상대값은 엄마를 기준으로 적용됨 (특정 상대값 제외) */
+    width: 50%;
+    height: 100px;
+    background: #7dd6f9;
+  }
+  </style>
+  <br>
+
+  <h2>세로사이즈</h2>
+  <div class="box2">
+    <div></div>
+  </div>
+  
+  <style>
+    .box2 {
+    background: #6d50ff;
+    }
+
+    .box2 div {
+      height: 100vh;
+      background: #5aa7de;
+    }
+  </style>
+
+  <h2>max-width</h2>
+  <div class="box3">max-width
+  </div>
+
+  <style>
+  .box3 {
+    max-width: 600px;
+    min-width: 320px;
+    height: 100px;
+    margin: auto;
+    background: #74ec84;
+  }
+  </style>
+
+  <h2>margin</h2>
+  <div class="box4">
+    <div class="box4-1"></div>
+    <div class="box4-2"></div>
+    <div class="box4-3"></div>
+    <div class="box4-4"></div>
+    <div class="box4-5"></div>
+    <div class="box4-6"></div>
+  </div>
+
+ <style>
+  .box4 {
+    margin : 10px 20px 30px 40px
+  }
+  .box4 div {
+    width: 100px;
+    height: 100px;
+    background: #b696f0;
+  }
+  .box4 .box4-1 {
+    margin-top: 100px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+  .box4 .box4-2 {
+     margin: 50px;
+  }
+  .box4 .box4-3 {
+    margin: 100px 50px;
+  }
+  .box4 .box4-4 {
+    margin: 200px 300px 400px;
+  }
+
+  .box4 .box4-5 {
+    margin: 0 auto;
+  }
+  .box4 .box4-6 {
+    /* inherit : 부모값 그대로 나타내는 값 */
+    margin: inherit;
+  }
+ </style>
+
+ <h2>padding</h2>
+ <div class="box5">
+  <div>padding1</div>
+  <div>padding2padding2</div>
+  <div>padding3</div>
+ </div>
+
+ 
+
+ <style>
+  .box5 div{
+    border: 1px solid #ed4850;
+    display: inline-block;
+  }
+
+.box5 div:first-child {
+  padding: 10px;
+ }
+
+.box5 div:nth-child(2) {
+  margin: 0px 50px;
+  padding: 20px 50px;
+}
+.box5 div:nth-child(3) {
+  padding: 20px 100px 50px;
+}
+</style>
+
+
+<div class="box6">
+  <div>padding4</div>
+  <div>padding5</div>
+  <div>padding6</div>
+  <div>padding7</div>
+ </div>
+
+ <style>
+  .box6 div {
+  width: 100px;
+  height: 100px;
+
+  background: #82a3d7;
+}
+.box6 div:nth-child(2){
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+}
+.box6 div:nth-child(3) {
+  width: 40px;
+  height: 80px;
+  padding: 10px 30px;
+ }
+
+ .box6 div:nth-child(4) {
+  padding: 10px 30px;
+  box-sizing: border-box;
+ }
+
+ </style>
+
+ <h2>border</h2>
+ <div class="box7">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+ </div>
+
+ <style>
+  .box7 div{
+    width: 100px;
+    height: 100px;
+    background: #facff5;
+  }
+
+  .box7 div:first-child {
+    border: 10px solid hsla(61, 100%, 60%, 0.5);
+    border-radius: 5px;
+  }
+  .box7 div:nth-child(2) {
+    border: 20px dotted hsl(318, 77%, 66%);
+    box-sizing: border-box;
+  }
+  .box7 div:nth-child(3) {
+    border-left: 6px solid hsl(0, 86%, 51%);
+  }
+  .box7 div:nth-child(4) {
+    border-bottom: 1px solid #000;
+  }
+ </style>
+
+</body>
+</html>
