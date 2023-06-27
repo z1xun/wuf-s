@@ -1,0 +1,51 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  line-height: 1.5;
+  color: #222328;
+}
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+  background: #fee8e8;
+}
+.header {
+  display: flex;
+  /* 헤더에서 무조건 사용 */
+  justify-content: space-between; 
+  height: 100px;
+  background: #ffc9c9;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo a {
+ display: block;
+  width: 200px;
+  height: 40px;
+}
+.gnb .depth1 { 
+  display: flex;
+}
+.gnb .depth2 {
+  /* display: none; */
+}
+.gnb .depth1 li {
+}
+
+.gnb .depth1 a {
+  background: #beee94;
+  padding: 0 50px;
+  display: block;
+  line-height: 100px;
+  text-align: center;
+  height: 100px;
+  /* display: flex
+  align-items: center; */
+}
+
