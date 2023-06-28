@@ -18,7 +18,7 @@
   /* 헤더에서 무조건 사용 */
   justify-content: space-between; 
   height: 100px;
-  background: #ffc9c9;
+  background: #ffffff;
 }
 .logo {
   display: flex;
@@ -33,13 +33,20 @@
   display: flex;
 }
 .gnb .depth2 {
-  /* display: none; */
+  display: none;
+  padding: 10px 0;
+  background: #ffffff;
 }
-.gnb .depth1 li {
+.gnb .depth2 a {
+  background: #ffffff;
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  height: 40px;
 }
-
-.gnb .depth1 a {
-  background: #beee94;
+ 
+.gnb .depth1 >li > a {
+  /* background: #beee94; */
   padding: 0 50px;
   display: block;
   line-height: 100px;
@@ -49,3 +56,44 @@
   align-items: center; */
 }
 
+/* 자손 : '>'  / 자식 : 스페이스바 */
+.gnb .depth1 >li > a:hover {
+  color: #f0ac45;
+ }
+ .gnb .depth1:hover .depth2 {
+  display: block;
+ }
+.gnb .depth2 > li > a:hover {
+  background: #f0ac45;
+  border-bottom: 1px solid #000000;
+}
+
+/* SLIDE */
+.slide {
+  overflow: hidden;
+  height: 300px;
+}
+.slide a, .slide img {
+  display: block;
+} 
+
+.contents {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.taps {
+  width: 350px;
+}
+
+.bbr {
+  width: 400px;
+}
+.bnr a,.bnr img {
+  display: block;
+}
+
+.goto {
+  width: 350px;
+}
