@@ -84,7 +84,7 @@
 }
 
 .taps {
-  width: 350px;
+  width: calc(100% / 2 - 230px);
 }
 
 .bbr {
@@ -95,5 +95,23 @@
 }
 
 .goto {
-  width: 350px;
+  width: calc(100% / 2 - 230px);
+}
+.goto ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  background: #ffc6c6;
+  height: 170px;
+  }
+.goto li {
+  width: calc(50% - 5px);
+  height: calc(50% - 5px);
+}
+
+.goto a {
+  display: block;
+  height: 100%;
+  background: #ff3a3a;
 }
