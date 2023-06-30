@@ -11,14 +11,12 @@
 .wrap {
   width: 1200px;
   margin: 0 auto;
-  background: #fee8e8;
 }
 .header {
   display: flex;
   /* 헤더에서 무조건 사용 */
   justify-content: space-between; 
   height: 100px;
-  background: #ffffff;
 }
 .logo {
   display: flex;
@@ -83,10 +81,80 @@
   padding: 10px 0;
 }
 
-.taps {
+.tabs-wrap {
   width: calc(100% / 2 - 230px);
+  display: flex;
+  position: relative;  
+}
+.tabs-wrap .tab-item {
+  width: 50%;
 }
 
+/* 비활성화부터 작업 */
+.tab-item .tit {
+  height: 30px;
+  padding-top: 3px ;
+  border-bottom: 2px solid #ddd;
+  background: #fff;
+  text-align: center;
+  font-size: 16px;
+  box-sizing: border-box ;
+}
+/* 활성화 tab */
+.tabs-wrap .on .tit {
+  background: #ddd;
+}
+.tab-item .cont {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  height: 140px;
+}
+
+.tabs-wrap .on .cont {
+  display: block;
+}
+.lst-bbs {
+  padding-top: 20px;
+}
+.lst-bbs li {
+  display: flex;
+  align-items: center;
+}
+.lst-bbs li::before {
+  margin-top: -2
+  px;
+  margin-right: 5px;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #ddd;
+  content: ""
+}
+.lst-bbs a {
+  display: block;
+  line-height: 2;
+}
+.lst-bbs a:hover {
+  text-decoration: underline;
+}
+
+.lst-gallery {
+  display: flex;
+  justify-content: space-between;
+}
+.lst-gallery li {
+  width: 100px;
+  padding-top: 6px;
+}
+.lst-gallery li p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .bbr {
   width: 400px;
 }
@@ -102,7 +170,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
-  background: #ffc6c6;
+  background: #ffffff;
   height: 170px;
   }
 .goto li {
@@ -114,4 +182,29 @@
   display: block;
   height: 100%;
   background: #ff3a3a;
+}
+.footer {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #eee;
+}
+.logo-foot a {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+.lst-sns {
+  display: flex;
+}
+
+.lst-sns li {
+  margin-left: 20px;
+}
+
+.lst-sns a {
+ display: block;
+ line-height: 100px;
+ height: 100px;
 }
