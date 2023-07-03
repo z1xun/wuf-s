@@ -8,6 +8,7 @@
   line-height: 1.5;
   color: #222328;
 }
+
 .wrap {
   width: 1200px;
   margin: 0 auto;
@@ -207,4 +208,47 @@
  display: block;
  line-height: 100px;
  height: 100px;
+}
+
+/* 모달창 */
+
+.modal-dimmed {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  /* width: 100px;
+  height: 100px; */
+}
+.modal-box {
+  position: relative;
+  padding: 30px;
+  text-align: center;
+  width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: #ffffff;
+}
+.modal-box h3 {
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.modal-box button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  background: #dedede;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }
