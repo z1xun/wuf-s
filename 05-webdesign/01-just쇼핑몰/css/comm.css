@@ -28,13 +28,26 @@
   width: 200px;
   height: 40px;
 }
+.gnb .depth1 > li {
+  position: relative;
+}
 .gnb .depth1 { 
   display: flex;
 }
 .gnb .depth2 {
-  display: none;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  /* display: none; */
   padding: 10px 0;
   background: #ffffff;
+  border: 3px solid #ddd;
+  border-right: none;
+}
+.gnb .depth1 > li:last-child .depth2 {
+  border-right: 3px solid #ddd;
 }
 .gnb .depth2 a {
   background: #ffffff;
@@ -67,28 +80,26 @@
   border-bottom: 1px solid #000000;
 }
 
-/* SLIDE */
-.slide {
-  overflow: hidden;
-  height: 300px;
-}
-.slide a, .slide img {
-  display: block;
-} 
-
 .contents {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
 }
 
-.tabs-wrap {
-  width: calc(100% / 2 - 230px);
-  display: flex;
-  position: relative;  
+
+/* SLIDE */
+.slide-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
 }
-.tabs-wrap .tab-item {
-  width: 50%;
+.slide-wrap a, .slide-wrap img {
+  display: block;
+}
+.lst-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /* 비활성화부터 작업 */
@@ -102,8 +113,16 @@
   box-sizing: border-box ;
 }
 /* 활성화 tab */
+.tabs-wrap {
+  display: flex;
+  position: relative;
+  width: 30%;
+}
 .tabs-wrap .on .tit {
   background: #ddd;
+}
+.tab-item {
+  width: 50%;
 }
 .tab-item .cont {
   display: none;
