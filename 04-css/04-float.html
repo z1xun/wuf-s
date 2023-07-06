@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>float | css </title>
-  <link rel="stylesheet" href="./css/comm.css">
+  <link rel="stylesheet" href="./comm.css">
 </head>
 <body>
 
   <h1>float</h1>
 
   <div class="wrap">
-    <header>
+    <header class="clearfix">
       <h1>logo</h1>
       <nav>
-        <ul>
+        <ul class="clearfix" >
           <li>menu1</li>
           <li>menu2</li>
           <li>menu3</li>
@@ -32,6 +32,30 @@
       <div class="foot3">sns</div>
     </footer>
   </div>
+
+  <h2>clear</h2>
+  <ul class="container">
+    <li>list</li>
+    <li>list</li>
+    <li>list</li>
+    <li>list</li>
+    <li>list</li>
+    <li>list</li>
+  </ul>
+
+  <style>
+    .container li{
+      float: left;
+      background: #0a0a0a;
+      width: 100px;
+      height: 100px;
+      border: 10px solid #f58181;
+    }
+
+    .container li:nth-last-child(3){
+      clear: left;
+    }
+  </style>
   
 </body>
 </html>

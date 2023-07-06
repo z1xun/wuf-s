@@ -10,6 +10,13 @@
   color: black;
 }
 
+.clearfix::after {
+  content:"";
+  clear: both;
+  display: block
+}
+
+
 .wrap {
   width: 1200px;
   /* 블럭요소를 가운데 정렬하려면 마진값 0 auto */
@@ -20,11 +27,6 @@
 header {
   padding: 20px 0;
   background: #daa0a0;
-}
-header::after {
-  content: "";
-  clear: both;
-  display: block;
 }
 
 header h1 {
@@ -40,12 +42,6 @@ header nav {
 header nav ul {
   background: #dbe477;
   padding: 10px 0;
-}
-
-header nav ul::after {
-  content: "";
-  clear:  both;
-  display: block;
 }
 
 header nav li {
