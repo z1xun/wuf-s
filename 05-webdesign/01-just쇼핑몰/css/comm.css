@@ -1,273 +1,295 @@
 @charset "UTF-8";
 * {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  box-sizing: border-box;
-  text-decoration: none;
-  line-height: 1.5;
-  color: #222328;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 1.5;
+    color: #222328;
 }
 
 .wrap {
-  width: 1200px;
-  margin: 0 auto;
+    width: 1200px;
+    margin: 0 auto;
 }
 .header {
-  display: flex;
-  /* 헤더에서 무조건 사용 */
-  justify-content: space-between; 
-  height: 100px;
+    display: flex;
+    /* 헤더에서 무조건 사용 */
+    justify-content: space-between;
+    height: 100px;
 }
 .logo {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 .logo a {
- display: block;
-  width: 200px;
-  height: 40px;
+    display: block;
+    width: 200px;
+    height: 40px;
 }
 .gnb .depth1 > li {
-  position: relative;
+    position: relative;
 }
-.gnb .depth1 { 
-  display: flex;
+.gnb .depth1 {
+    display: flex;
+}
+.gnb .depth1:hover .depth2 {
+    display: block;
+    max-height: 300px;
+    /* padding: 10px 0; */
+    border-bottom-width: 1px;
 }
 .gnb .depth2 {
-  position: absolute;
-  top: 100px;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  /* display: none; */
-  padding: 10px 0;
-  background: #ffffff;
-  border: 3px solid #ddd;
-  border-right: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    max-height: 0;
+    padding: 0;
+    border-bottom: 0px solid #ddd;
+    overflow: hidden;
+    /* display: none; */
+    background: #ffffff;
+    border-right: none;
+    transition: all 0.3s;
 }
-.gnb .depth1 > li:last-child .depth2 {
-  border-right: 3px solid #ddd;
+.gnb .depth2::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 0;
+    bottom: 5px;
+    width: 1px;
+    background: #ddd;
 }
+.gnb .depth1 > li:last-child .depth2:after {
+    display: none;
+}
+/* .gnb .depth1 > li:last-child .depth2 {
+    border-right: 3px solid #ddd;
+} */
 .gnb .depth2 a {
-  background: #ffffff;
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-  height: 40px;
+    background: #ffffff;
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    height: 40px;
 }
- 
-.gnb .depth1 >li > a {
-  /* background: #beee94; */
-  padding: 0 50px;
-  display: block;
-  line-height: 100px;
-  text-align: center;
-  height: 100px;
-  /* display: flex
+
+.gnb .depth1 > li > a {
+    /* background: #beee94; */
+    padding: 0 50px;
+    display: block;
+    line-height: 100px;
+    text-align: center;
+    height: 100px;
+    /* display: flex
   align-items: center; */
 }
 
 /* 자손 : '>'  / 자식 : 스페이스바 */
-.gnb .depth1 >li > a:hover {
-  color: #f0ac45;
- }
- .gnb .depth1:hover .depth2 {
-  display: block;
- }
-.gnb .depth2 > li > a:hover {
-  background: #f0ac45;
-  border-bottom: 1px solid #000000;
+.gnb .depth1 > li:hover > a {
+    color: #f0ac45;
+    border-bottom: 1px solid #000000;
+}
+.gnb .depth1:hover .depth2 {
+    display: block;
+}
+.gnb .depth2 > li:hover > a {
+    background: #f0ac45;
+    color: #fff;
 }
 
 .contents {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
 }
-
 
 /* SLIDE */
 .slide-wrap {
-  position: relative;
-  overflow: hidden;
-  height: 300px;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
 }
-.slide-wrap a, .slide-wrap img {
-  display: block;
+.slide-wrap a,
+.slide-wrap img {
+    display: block;
 }
 .lst-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* 비활성화부터 작업 */
 .tab-item .tit {
-  height: 30px;
-  padding-top: 3px ;
-  border-bottom: 2px solid #ddd;
-  background: #fff;
-  text-align: center;
-  font-size: 16px;
-  box-sizing: border-box ;
+    height: 30px;
+    padding-top: 3px;
+    border-bottom: 2px solid #ddd;
+    background: #fff;
+    text-align: center;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 /* 활성화 tab */
 .tabs-wrap {
-  display: flex;
-  position: relative;
-  width: 30%;
+    display: flex;
+    position: relative;
+    width: 30%;
 }
 .tabs-wrap .on .tit {
-  background: #ddd;
+    background: #ddd;
 }
 .tab-item {
-  width: 50%;
+    width: 50%;
 }
 .tab-item .cont {
-  display: none;
-  position: absolute;
-  top: 30px;
-  left: 0;
-  right: 0;
-  background: #ffffff;
-  height: 140px;
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    height: 140px;
 }
 
 .tabs-wrap .on .cont {
-  display: block;
+    display: block;
 }
 .lst-bbs {
-  padding-top: 20px;
+    padding-top: 20px;
 }
 .lst-bbs li {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 .lst-bbs li::before {
-  margin-top: -2
-  px;
-  margin-right: 5px;
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  background: #ddd;
-  content: ""
+    margin-top: -2 px;
+    margin-right: 5px;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #ddd;
+    content: "";
 }
 .lst-bbs a {
-  display: block;
-  line-height: 2;
+    display: block;
+    line-height: 2;
 }
 .lst-bbs a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .lst-gallery {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 .lst-gallery li {
-  width: 100px;
-  padding-top: 6px;
+    width: 100px;
+    padding-top: 6px;
 }
 .lst-gallery li p {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .bbr {
-  width: 400px;
+    width: 400px;
 }
-.bnr a,.bnr img {
-  display: block;
+.bnr a,
+.bnr img {
+    display: block;
 }
 
 .goto {
-  width: calc(100% / 2 - 230px);
+    width: calc(100% / 2 - 230px);
 }
 .goto ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-  background: #ffffff;
-  height: 170px;
-  }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    background: #ffffff;
+    height: 170px;
+}
 .goto li {
-  width: calc(50% - 5px);
-  height: calc(50% - 5px);
+    width: calc(50% - 5px);
+    height: calc(50% - 5px);
 }
 
 .goto a {
-  display: block;
-  height: 100%;
-  background: #ff3a3a;
+    display: block;
+    height: 100%;
+    background: #ff3a3a;
 }
 .footer {
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 2px solid #eee;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #eee;
 }
 .logo-foot a {
-  display: flex;
-  align-items: center;
-  height: 100px;
+    display: flex;
+    align-items: center;
+    height: 100px;
 }
 .lst-sns {
-  display: flex;
+    display: flex;
 }
 
 .lst-sns li {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 .lst-sns a {
- display: block;
- line-height: 100px;
- height: 100px;
+    display: block;
+    line-height: 100px;
+    height: 100px;
 }
 
 /* 모달창 */
 
 .modal-dimmed {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  /* width: 100px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* width: 100px;
   height: 100px; */
 }
 .modal-box {
-  position: relative;
-  padding: 30px;
-  text-align: center;
-  width: 500px;
-  height: 300px;
-  border-radius: 10px;
-  border: 1px solid #000;
-  background: #ffffff;
+    position: relative;
+    padding: 30px;
+    text-align: center;
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background: #ffffff;
 }
 .modal-box h3 {
-  font-size: 24px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .modal-box button {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 30px;
-  height: 30px;
-  background: #dedede;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    background: #dedede;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
 }

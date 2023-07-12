@@ -1,36 +1,128 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>background | css</title>
-  
-  <style>
-  * {
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-  }
-  </style>
-</head>
-<body>
- <h1>background</h1>
- <div class="bg1">bg</div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>background | css</title>
 
- <style>
-  body {
-    background-color: hsl(56, 100%, 88%);
-    color: rgb(14, 194, 249);
-  }
- .bg1 {
-  width: 100%;
-  height: 100px;
-  background-color: #d4f4ff;
-  }
- </style>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                line-height: 1.5;
+                text-decoration: none;
+                list-style: none;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>background</h1>
+        <div class="bg1">bg</div>
 
-</body>
+        <style>
+            body {
+                background-color: hsl(56, 100%, 88%);
+                color: rgb(14, 194, 249);
+            }
+            .bg1 {
+                width: 100%;
+                height: 100px;
+                background-color: #d4f4ff;
+            }
+        </style>
+
+        <h2>background-image</h2>
+        <div class="box1"></div>
+
+        <h2>background-attachment</h2>
+        <div class="box2"></div>
+
+        <style>
+            .box1 {
+                /* width: 200px; */
+                height: 200px;
+                border: 1px solid #000;
+                background: #ffffff;
+                background-image: url("https://avatars.githubusercontent.com/u/10627436?v=4");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: 50%;
+            }
+
+            .box2 {
+                height: 200px;
+                background-image: url("https://images.unsplash.com/photo-1688553498618-a757796ce5b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80");
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+            }
+        </style>
+
+        <h2>background-size</h2>
+        <div class="box box3"></div>
+        <br />
+        <div class="box box4"></div>
+
+        <style>
+            .box {
+                width: 800px;
+                height: 300px;
+                background-repeat: no-repeat;
+                border: 10px solid #000;
+                background-image: url("https://avatars.githubusercontent.com/u/10627436?v=4");
+            }
+            .box3 {
+                background-size: contain;
+                /* logo, icon 잘리면 안되는 이미지 */
+            }
+            .box4 {
+                background-size: cover;
+                background-position: 0 40%;
+                /* 배경이미지 */
+            }
+        </style>
+
+        <h2>sprite</h2>
+        <wrap>
+            <div class="img-g sprite1"></div>
+            <div class="img-g sprite2"></div>
+            <div class="img-g sprite22"></div>
+            <div class="img-g sprite3"></div>
+        </wrap>
+        <style>
+            wrap {
+                display: flex;
+            }
+            .img-g {
+                background: url(./images/D-_jiseon_git_04-css_images_Untitled-1.png) no-repeat;
+            }
+            .sprite1 {
+                width: 140px;
+                height: 140px;
+                background-position: 0 0;
+            }
+            .sprite2 {
+                width: 40px;
+                height: 38px;
+                background-position: -140px 0;
+            }
+            .sprite2 {
+                width: 40px;
+                height: 38px;
+                background-position: -140px -60px;
+            }
+            .sprite3 {
+                width: 32px;
+                height: 32px;
+                background-position: -200px 0;
+            }
+            .sprite3:hover {
+                background-position: -240px 0;
+            }
+            .sprite3:active {
+                background-position: -280px 0;
+            }
+        </style>
+    </body>
 </html>
