@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>etc |css</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                text-decoration: none;
+                line-height: 1.5;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>tooltip</h1>
+
+        <div class="tooltip-wrap">
+            tooltip보기000000000 <br />
+            tooltip보기000000000
+            <div class="item top">top</div>
+            <div class="item bottom">bottom</div>
+            <div class="item left">left</div>
+            <div class="item right">right</div>
+            <!-- <div class="tooltip-item2">Lorem ipsum</div> -->
+        </div>
+
+        <style>
+            /* arrow */
+            .item::after {
+                content: "";
+                position: absolute;
+                border-width: 5px;
+                border-style: solid;
+                border-color: rgb(255, 0, 0) transparent transparent transparent;
+            }
+            .tooltip-wrap {
+                display: inline-block;
+                position: relative;
+                font-size: 20px;
+                font-weight: bold;
+                color: blue;
+                background: #f1a5f2;
+                margin: 100px;
+            }
+            .item {
+                display: inline-block;
+                width: 50px;
+                padding: 5px 0;
+                font-weight: normal;
+                font-size: 10px;
+                background: #000;
+                color: #fff;
+                border: 1px solid #fff;
+                border-radius: 10px;
+                opacity: 0.5;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .top {
+                position: absolute;
+                top: -60px;
+                left: 50%;
+                margin-left: -25px;
+            }
+            .top::after {
+                bottom: -10px;
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+            .bottom {
+                position: absolute;
+                bottom: -60px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .bottom::after {
+                top: -10px;
+                left: 50%;
+                transform: rotate(180deg) translate(50%, 0);
+            }
+
+            .left {
+                position: absolute;
+                top: 50%;
+                left: -30%;
+                transform: translateY(-50%);
+            }
+            .left::after {
+                top: 50%;
+                right: -20%;
+                transform: rotate(-90deg) translate(50%, 0%);
+            }
+            .right {
+                position: absolute;
+                top: 50%;
+                right: -30%;
+                transform: translateY(-50%);
+            }
+            .right::after {
+                top: 50%;
+                left: -20%;
+                transform: rotate(90deg) translate(-50%, 0%);
+            }
+        </style>
+
+        <h2>image style</h2>
+
+        <div class="image1">
+            <img
+                src="https://plus.unsplash.com/premium_photo-1675235457994-9ab21a02920b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                alt=""
+            />
+        </div>
+
+        <style>
+            .image1 {
+                -webkit-mask-image: url(./images/w3logo.png);
+                -webkit-mask-repeat: no-repeat;
+            }
+            .image1 img {
+                height: 300px;
+                width: 500px;
+                object-fit: cover;
+                padding: 5px;
+                border-radius: 10px;
+                border: 5px solid black;
+                /* filter: grayscale(100%); */
+                object-position: 0% 50%;
+            }
+        </style>
+
+        <h2>button-disabled</h2>
+        <input type="button" value="비활성화" class="button" disabled />
+
+        <style>
+            .button {
+                background-color: #4caf50; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            .button:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+        </style>
+    </body>
+</html>

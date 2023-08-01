@@ -140,5 +140,31 @@
          }
          
          </style>
+
+         <h2>가운데정렬 : transform</h2>
+
+
+          <div class="box5">
+            <div class="item"></div>
+
+            <style>
+              .box5 {
+                position: relative;
+                height: 500px;
+                background: #25beff;
+              }
+
+
+              /* 트랜스폼 사용해서 가운데정렬하면 가로세로값이 변해도 완벽한 센터링 가능 */
+              .box5 .item {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 200px;
+                height: 200px;
+                background: #0062ff;
+                transform: translate(-50%, -50%);
+              }
+            </style>
     </body>
 </html>

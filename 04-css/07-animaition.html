@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>animation | css</title>
+    </head>
+    <body>
+        <h1>animation</h1>
+        <div class="box1">
+            <div class="ani"></div>
+        </div>
+        <style>
+            .box1 {
+                position: relative;
+                height: 500px;
+                background: lightgray;
+            }
+            .ani {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 200px;
+                background: red;
+                animation-name: ani-box;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                animation-delay: 2s;
+                /* 잠깐이라도 끊김없이 움직이고싶을때 사용 */
+                animation-fill-mode: forwards;
+            }
+            @keyframes ani-box {
+                0% {
+                    background: #ffda23;
+                    left: 0;
+                    top: 0;
+                }
+                50% {
+                    background: #194bff;
+                    left: calc(100% - 200px);
+                    top: 0;
+                }
+                100% {
+                    background: #ffda23;
+                    right: calc(100% - 200px);
+                    top: 0;
+                }
+            }
+        </style>
+
+        <br />
+
+        <div class="box2">
+            <div class="sqare"></div>
+            <div class="circle"></div>
+        </div>
+
+        <style>
+            .box2 {
+                position: relative;
+                height: 500px;
+                background: lightgray;
+            }
+
+            .sqare {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 100px;
+                background: rgba(235, 255, 192, 0.628);
+                animation-name: ani-box1;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                animation-delay: 0.3s;
+            }
+            @keyframes ani-box1 {
+                0% {
+                    left: 0;
+                    top: 0;
+                }
+                50% {
+                    left: calc(50% - 50px);
+                    top: calc(50% - 50px);
+                }
+                100% {
+                    left: 0;
+                    top: 0;
+                }
+            }
+
+            .circle {
+                position: absolute;
+                top: 100;
+                right: 0;
+                width: 100px;
+                height: 100px;
+                background: rgba(255, 0, 43, 0.301);
+                border-radius: 50%;
+                animation-name: ani-box2;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                animation-delay: 0.7s;
+            }
+
+            @keyframes ani-box2 {
+                0% {
+                    right: 0;
+                    bottom: 0;
+                }
+                50% {
+                    bottom: calc(50% - 50px);
+                    right: calc(50% - 50px);
+                }
+                100% {
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        </style>
+    </body>
+</html>
