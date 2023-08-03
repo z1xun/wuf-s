@@ -1,15 +1,36 @@
 $(function () {
-    $(".lst-bbs li:first-child").on("click", function () {
-        $("#modal").addClass("active");
+    //모달
+    const modalWrap = $("#modal");
+    const modalBtn = modalWrap.find("button");
+    const listbbsEl = $(".lst-bbs li:first-child");
+
+    listbbsEl.on("click", function () {
+        modalWrap.addClass("active");
     });
 
-    $("#modal button").on("click", function () {
-        $("#modal").removeClass("active");
+    modalBtn.on("click", function () {
+        modalWrap.removeClass("active");
     });
-    $(".tab-item").removeClass("on");
-    $(".tab-item:first-child").addClass("on");
-    $(".tab-item .tit").on("click", function () {
-        $(".tab-item").removeClass("on");
+    //탭
+    const tabEl = $(".tab-item");
+    const tabTit = tabEl.find(".tit");
+
+    tabEl.removeClass("on");
+    tabEl.first().addClass("on");
+    tabTit.on("click", function () {
+        tabEl.removeClass("on");
         $(this).parent().addClass("on");
     });
+    //슬라이드
+    let now = 1;
+
+    setInterval(function () {
+        slide();
+    }, 3000);
+
+    function slide() {
+        $(".lst-slide").animate({
+            top: 100 * now * -1 + "%",
+        });
+    }
 });
