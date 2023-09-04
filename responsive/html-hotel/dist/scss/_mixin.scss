@@ -78,3 +78,41 @@
     left: $l;
     right: $r;
 }
+
+// 미디어쿼리
+//가로사이즈 1440px 이하일 경우
+@media screen and (max-width: 1440px) {
+    body {
+        background-color: blue;
+    }
+}
+//가로사이즈 1280px 이하일 경우
+@media screen and (max-width: 1280px) {
+    body {
+        background-color: #368791;
+    }
+}
+//***가로사이즈 1024px 이하일 경우(tablet)
+@media screen and (max-width: 1024px) {
+    body {
+        background-color: #e038ef;
+    }
+}
+//가로사이즈 744px 이하일 경우
+@media screen and (max-width: 744px) {
+    body {
+        background-color: #e93535;
+    }
+}
+//***가로사이즈 428px 이하일 경우(mobile)
+@media screen and (max-width: 428px) {
+    body {
+        background-color: #27c72c;
+    }
+}
+//가로사이즈 360px 이하일 경우
+@media screen and (max-width: 360px) {
+    body {
+        background-color: #d1d132;
+    }
+}

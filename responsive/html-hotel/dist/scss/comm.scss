@@ -3,9 +3,10 @@
 
 $hdWidth: 200px;
 
+//layout
 .wrap {
     display: flex;
-    height: 100vh;
+    // height: 100vh;
     position: relative;
 }
 #header {
@@ -15,6 +16,33 @@ $hdWidth: 200px;
     display: flex;
     flex-direction: column;
 }
+
+#main {
+    width: calc(100% - $hdWidth);
+    padding-top: $utilHeight;
+}
+
+@media screen and (max-width: 1440px) {
+    .wrap {
+        display: block;
+    }
+    #header {
+        width: 100%;
+        display: block;
+        padding: 0;
+        .inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    #main {
+        width: auto;
+        padding-top: 0;
+    }
+}
+
+//header
 #logo {
     a {
         display: block;
@@ -27,7 +55,7 @@ $hdWidth: 200px;
 }
 #gnb {
     width: 100px;
-    margin: 70px auto 0;
+    margin: 70px auto 350px;
 
     li {
         a {
@@ -50,7 +78,7 @@ $hdWidth: 200px;
     }
     .connect {
         a {
-            font-size: 12px;
+            font-size: 0.75rem;
             position: relative;
             &::before {
                 content: "";
@@ -65,146 +93,181 @@ $hdWidth: 200px;
             }
         }
     }
+}
+.sns {
+    display: flex;
+    justify-content: center;
+    a {
+        display: block;
+        width: 31px;
+        height: 29px;
+        text-indent: -9999px;
+        padding: 0;
+    }
+    .facebook {
+        background: url(/images/sns3.png) no-repeat 0 0;
+    }
+    .twitter {
+        background: url(/images/sns4.png) no-repeat 0 0;
+    }
+    .instagram {
+        background: url(/images/sns5.png) no-repeat 0 0;
+    }
+}
+.util {
+    position: absolute;
+    top: 0;
+    left: $hdWidth;
+    right: 0;
+    background: #000;
+    height: 40px;
+
+    a {
+        display: inline-block;
+        width: 130px;
+        height: 29px;
+        text-indent: -9999px;
+        padding: 0;
+    }
+
+    .sign-up {
+        background: url(/images/util1.png) no-repeat 0 0;
+    }
+    .language {
+        background: url(/images/util2.png) no-repeat 0 0;
+    }
+}
+@media screen and (max-width: 1440px) {
+    .spot,
     .sns {
-        a {
-            display: block;
-            width: 31px;
-            height: 29px;
-            text-indent: -9999px;
-            padding: 0;
-        }
-        .facebook {
-            background: url(/html-hotel/images/sns3.png) no-repeat 0 0;
-        }
-        .twitter {
-            background: url(/html-hotel/images/sns4.png) no-repeat 0 0;
-        }
-        .instagram {
-            background: url(/html-hotel/images/sns5.png) no-repeat 0 0;
+        display: none;
+    }
+
+    .util {
+        position: static;
+        height: 50px;
+    }
+    #gnb {
+        margin: 0;
+        width: auto;
+        .depth1 {
+            display: flex;
+            justify-content: flex-end;
+            a {
+                height: 100px;
+                line-height: 100px;
+                padding: 0 40px;
+            }
         }
     }
-    .util {
-        position: absolute;
-        top: 0;
-        left: $hdWidth;
-        right: 0;
-        background: #000;
-        height: 40px;
-
+    #logo {
         a {
-            display: inline-block;
-            width: 130px;
-            height: 29px;
-            text-indent: -9999px;
-            padding: 0;
-        }
-
-        .sign-up {
-            background: url(/images/util1.png) no-repeat 0 0;
-        }
-        .language {
-            background: url(/images/util2.png) no-repeat 0 0;
+            width: 250px;
+            height: 50px;
+            background: url(/images/logo2.png) 0 0 / contain no-repeat;
+            margin: 10px 25px;
         }
     }
 }
 
-#main {
-    width: calc(100% - $hdWidth);
-    background: #864e4e;
-    padding-top: $utilHeight;
+//main
+.grid {
+    width: 100%;
+    height: calc(100vh - $utilHeight);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 
-    .grid {
-        width: 100%;
-        height: calc(100vh - $utilHeight);
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(4, 1fr);
+    .box-g {
+        height: 100%;
+        position: relative;
+        padding: 30px 20px;
+        .tit-big {
+            color: $w;
+            opacity: 0.9;
+            font-size: 5rem;
+            font-weight: 900;
+            letter-spacing: -3px;
+            position: absolute;
+            bottom: -30px;
+            right: 3px;
+        }
+        strong {
+            color: $w;
+            font-size: 1.25rem;
+            text-transform: capitalize;
+        }
+    }
 
-        .box-g {
-            height: 100%;
-            position: relative;
-            padding: 30px 20px;
-            .tit-big {
-                color: $w;
-                opacity: 0.9;
-                font-size: 80px;
-                font-weight: 900;
-                letter-spacing: -3px;
-                position: absolute;
-                bottom: -30px;
-                right: 3px;
-            }
-            strong {
-                color: $w;
-                font-size: 20px;
-                text-transform: capitalize;
-            }
-        }
-
-        .box-1 {
-            grid-row: 1 / 3;
-            grid-column: 1 / 4;
-            background: url(/images/pic1.jpg) 50% 50% / cover no-repeat;
-        }
-        .box-2 {
-            grid-row: 1 / 2;
-            grid-column: 4 / 6;
-            background: #ffffff;
-        }
-        .box-3 {
-            background: #c1f2ff;
-            position: relative;
-            &::after {
-                content: "\f2f9";
-                font-weight: 900;
-                font-family: "Font Awesome 6 Free";
-                font-size: 130px;
-                position: absolute;
-                bottom: -30px;
-                right: 3px;
-                color: #fff;
-                animation: fa-spin 2s infinite linear;
-                @keyframes fa-spin {
-                    0% {
-                        transform: rotate(0);
-                    }
-                    100% {
-                        transform: rotate(360deg);
-                    }
+    .box-1 {
+        grid-row: 1 / 3;
+        grid-column: 1 / 4;
+        background: url(/images/pic1.jpg) 50% 50% / cover no-repeat;
+    }
+    .box-2 {
+        grid-row: 1 / 2;
+        grid-column: 4 / 6;
+        background: #ffffff;
+    }
+    .box-3 {
+        background: #c1f2ff;
+        position: relative;
+        &::after {
+            content: "\f2f9";
+            font-weight: 900;
+            font-family: "Font Awesome 6 Free";
+            font-size: 8.125rem;
+            position: absolute;
+            bottom: -30px;
+            right: 3px;
+            color: #fff;
+            animation: fa-spin 2s infinite linear;
+            @keyframes fa-spin {
+                0% {
+                    transform: rotate(0);
+                }
+                100% {
+                    transform: rotate(360deg);
                 }
             }
         }
-        .box-4 {
-            background: url(/images/pic6.jpg) 50% 50% / cover no-repeat;
-        }
-        .box-5 {
-            background: url(/images/pic5.jpg) 50% 50% / cover no-repeat;
-        }
+    }
+    .box-4 {
+        background: url(/images/pic6.jpg) 50% 50% / cover no-repeat;
+    }
+    .box-5 {
+        background: url(/images/pic5.jpg) 50% 50% / cover no-repeat;
+    }
 
-        .box-6 {
-            grid-column: 2 / 4;
-            background: #ffffff;
-        }
-        .box-7 {
-            background: url(/images/pic4.jpg) 50% 50% / cover no-repeat;
-        }
-        .box-8 {
-            background: #ffffff;
-        }
+    .box-6 {
+        grid-column: 2 / 4;
+        background: #ffffff;
+    }
+    .box-7 {
+        background: url(/images/pic4.jpg) 50% 50% / cover no-repeat;
+    }
+    .box-8 {
+        background: #ffffff;
+    }
 
-        .box-9 {
-            grid-column: 1 / 3;
-            background: url(/images/pic3.jpg) 50% 50% / cover no-repeat;
-        }
-        .box-10 {
-            background: url(/images/pic2.jpg) 50% 50% / cover no-repeat;
-        }
-        .box-11 {
-            background: #defbff;
-        }
-        .box-12 {
-            background: url(/images/pic7.jpg) 50% 50% / cover no-repeat;
-        }
+    .box-9 {
+        grid-column: 1 / 3;
+        background: url(/images/pic3.jpg) 50% 50% / cover no-repeat;
+    }
+    .box-10 {
+        background: url(/images/pic2.jpg) 50% 50% / cover no-repeat;
+    }
+    .box-11 {
+        background: #defbff;
+    }
+    .box-12 {
+        background: url(/images/pic7.jpg) 50% 50% / cover no-repeat;
     }
 }
+@media screen and (max-width: 1440px) {
+    .grid {
+        height: calc(100vh - 150px);
+    }
+}
+
 @import "main", "contents";
