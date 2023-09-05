@@ -1,34 +1,4 @@
 @charset "UTF-8";
-@media screen and (max-width: 1440px) {
-  body {
-    background-color: blue;
-  }
-}
-@media screen and (max-width: 1280px) {
-  body {
-    background-color: #368791;
-  }
-}
-@media screen and (max-width: 1024px) {
-  body {
-    background-color: #e038ef;
-  }
-}
-@media screen and (max-width: 744px) {
-  body {
-    background-color: #e93535;
-  }
-}
-@media screen and (max-width: 428px) {
-  body {
-    background-color: #27c72c;
-  }
-}
-@media screen and (max-width: 360px) {
-  body {
-    background-color: #d1d132;
-  }
-}
 /* reset */
 body,
 div,
