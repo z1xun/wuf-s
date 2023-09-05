@@ -610,7 +610,7 @@ legend {
     display: none;
   }
 }
-@media screen and (max-width: 428px) {
+@media screen and (max-width: 744px) {
   #header {
     display: flex;
     flex-direction: column;
