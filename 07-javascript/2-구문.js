@@ -62,4 +62,4 @@ function printCity(user) {
     return user.address?.city || "주소 정보가 없습니다.";
 }
 console.log(printCity(user2)); //seoul
-console.log(printCity(user3)); //undefind
+console.log(printCity(user3)); //undefind!!
