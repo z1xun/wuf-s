@@ -71,3 +71,63 @@ console.log(getSound2("헤헤"));
 for (let i = 0; i < 10; i++) {
     console.log(i);
 }
+
+function getGrade(score) {
+    if (score === 100) {
+        //A+
+        return "A+";
+    } else if (score >= 90) {
+        //A
+        return "A";
+    } else if (score >= 80) {
+        //B
+        return "B";
+    } else if (score >= 70) {
+        //C
+        return "C";
+    } else if (score >= 60) {
+        //D
+        return "D";
+    } else {
+        //F
+        return "F";
+    }
+}
+console.log(getGrade(100));
+console.log(getGrade(70));
+
+//객체 구조 분해 할당
+const user = {
+    name: "winter",
+    age: 2,
+};
+
+function getName({ name }) {
+    return name;
+}
+console.log(getName(user));
+
+function getAge({ age }) {
+    return age;
+}
+console.log(getAge(user));
+
+function getEmail({ email = "이메일이 없습니다." }) {
+    return email;
+}
+console.log(getEmail(user));
+
+//화살표 함수
+
+function helloWorld() {
+    console.log("hello");
+}
+const helloWorld1 = function () {
+    console.log("hello1");
+};
+const helloWorld2 = () => {
+    console.log("hello2");
+};
+helloWorld();
+helloWorld1();
+helloWorld2();
