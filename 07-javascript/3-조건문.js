@@ -131,3 +131,23 @@ const helloWorld2 = () => {
 helloWorld();
 helloWorld1();
 helloWorld2();
+
+//sum 함수
+function sum1(x, y) {
+    return x + y;
+}
+//표현식
+const sum2 = function (x, y) {
+    return x + y;
+};
+//화살표 함수
+const sum3 = (x, y) => {
+    return x + y;
+};
+//축약
+const sum4 = (x, y) => x + y;
+
+console.log(sum1(1, 2));
+console.log(sum2(1, 2));
+console.log(sum3(1, 2));
+console.log(sum4(1, 2));
