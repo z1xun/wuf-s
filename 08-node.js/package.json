@@ -1,17 +1,17 @@
 {
-  "name": "08-node",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "swiper": "^10.3.0"
-  },
-  "devDependencies": {
-    "parcel": "^2.9.3"
-  }
+    "name": "08-node",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "dev": "parcel ./index.html"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "swiper": "^10.3.0"
+    },
+    "devDependencies": {
+        "parcel": "^2.9.3"
+    }
 }

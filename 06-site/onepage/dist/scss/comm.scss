@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+$md: 768px;
+$header-height: 70px;
+
+@media (min-width: 576px) {
+    .navbar-expand-sm .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        justify-content: flex-end !important;
+    }
+}
+.bg-zzz {
+    --bs-bg-opacity: 1;
+    background-color: #364629;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+}
+
+.sec-g {
+    padding: 6.25rem 0;
+    height: 100vh;
+}
+#header {
+    padding: 0 1.875em;
+    height: $header-height;
+}
+#jumbotron {
+    height: 100vh;
+}
+.wrap {
+    margin-top: $header-height;
+}
