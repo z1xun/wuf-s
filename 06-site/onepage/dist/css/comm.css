@@ -1,3 +1,264 @@
+@charset "UTF-8";
+/* reset */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+textarea,
+p,
+blockquote,
+th,
+td,
+input,
+select,
+button,
+header,
+main,
+footer,
+article {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+fieldset,
+img {
+  border: 0 none;
+}
+
+dl,
+ul,
+ol,
+menu,
+li {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+input,
+select,
+textarea {
+  font-size: 100%;
+  vertical-align: middle;
+}
+
+button {
+  font-size: 100%;
+  vertical-align: middle;
+  border: 0 none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+}
+
+/* 뷰표트 변환시 폰트크기 자동확대 방지 */
+input[type=text], input[type=password], input[type=submit], input[type=search] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+input:checked[type=checkbox] {
+  background-color: #666;
+  -webkit-appearance: checkbox;
+}
+
+button {
+  -webkit-appearance: button;
+  border-radius: 0;
+}
+
+input[type=button], input[type=submit], input[type=reset], input[type=file] {
+  -webkit-appearance: button;
+  border-radius: 0;
+}
+input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* 기본 폰트 설정 */
+/* mobile */
+body {
+  background: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: "Noto Sans KR", "Malgun Gothic", "맑은 고딕", sans-serif;
+  color: #111;
+}
+
+/* desktop */
+@media screen and (min-width: 1280px) {
+  body {
+    font-size: 16px;
+  }
+}
+/* color값은 디자인가이드에 맞게사용 */
+a {
+  color: #333;
+  text-decoration: none;
+}
+a:active, a:hover {
+  text-decoration: none;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+hr {
+  display: none;
+}
+
+input[type=password] {
+  font-family: "Malgun Gothic";
+}
+
+/* 웹폰트 사용시 점이 안보임 - 기본 폰트 사용  */
+/* skipnavigation */
+#u-skip {
+  position: relative;
+  z-index: 3000;
+}
+#u-skip a {
+  position: absolute;
+  top: -35px;
+  left: 0;
+  right: 0;
+  display: inline-block;
+  padding: 7px 10px 5px;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  opacity: 0;
+}
+#u-skip a:focus {
+  top: 0;
+  opacity: 1;
+  z-index: 1000;
+}
+
+/* 이미지 스프라이트 */
+.img-g {
+  display: inline-block;
+  overflow: hidden;
+  background: url(../../images/comm/img-comm.png) no-repeat;
+  vertical-align: top;
+}
+
+/* 이미지 */
+/* global */
+.ir-pm {
+  display: block;
+  overflow: hidden;
+  font-size: 0px;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+/* 사용된 이미지내 의미있는 텍스트의 대체텍스트를 제공할때 */
+.ir-wa {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+}
+
+/* 중요한 이미지 대체텍스트로 이미지off시에도 대체 텍스트를 보여주고자 할때 */
+.blind,
+caption,
+legend {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+/* 대체텍스트가 아닌 접근성을 위한 숨김텍스트를 제공할때 */
+.f_l {
+  float: left;
+}
+
+.f_r {
+  float: right;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.tbl {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 테이블 초기화 */
+.clearfix {
+  display: block;
+  overflow: visible;
+  width: auto;
+  clear: both;
+  zoom: 1;
+}
+.clearfix:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+  clear: both;
+  content: "";
+}
+
 @media (min-width: 576px) {
   .navbar-expand-sm .navbar-collapse {
     display: flex !important;
@@ -5,20 +266,14 @@
     justify-content: flex-end !important;
   }
 }
-.bg-zzz {
+body {
+  background: #f8ea9f;
+  color: #3a3a3a;
+}
+
+.bg-yellow {
   --bs-bg-opacity: 1;
-  background-color: #364629;
-}
-
-.title {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 3.5rem;
-}
-
-.sec-g {
-  padding: 6.25rem 0;
-  height: 100vh;
+  background-color: #fadb60;
 }
 
 #header {
@@ -26,10 +281,171 @@
   height: 70px;
 }
 
+#main {
+  position: relative;
+  top: -70px;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #3a3a3a;
+  padding: 3px 0 6px;
+  white-space: nowrap;
+}
+.marquee .content {
+  animation: marquee infinite 20s both linear;
+}
+@media (max-width: 540px) {
+  .marquee .content {
+    animation-duration: 10s;
+  }
+}
+.marquee .content.uppercase span {
+  text-transform: uppercase;
+}
+.marquee .content span {
+  color: white;
+  font-size: 12px;
+  font-family: Raleway, sans-serif;
+}
+.marquee .content span.star:before {
+  content: "🍦";
+  padding: 0 20px;
+}
+.marquee.light {
+  background: #fcfcfc;
+}
+.marquee.light .content span {
+  color: #313131;
+  font-weight: bold;
+}
+
+@keyframes marquee {
+  from {
+    transform: translatex(0);
+  }
+  to {
+    transform: translatex(-100vw);
+  }
+}
 #jumbotron {
-  height: 100vh;
+  height: calc(100vh - 33px);
+  position: relative;
+}
+#jumbotron .container {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
 }
 
 .wrap {
   margin-top: 70px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand img {
+  height: 100%;
+}
+
+.nav-link {
+  text-transform: capitalize;
+}
+
+.main-image {
+  background: url(/images/main_img.jpg) no-repeat 50% 0;
+  text-transform: uppercase;
+}
+
+.sec-g {
+  padding: 6.25rem 0;
+  height: 100vh;
+}
+.sec-g .title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.75rem;
+  color: #fffdd8;
+  font-family: "Lobster";
+  text-shadow: #3a3a3a 3px 3px;
+}
+.sec-g .title h2 {
+  font-size: 4.375rem;
+}
+
+#about {
+  height: 220vh;
+}
+#about .desc {
+  text-align: center;
+  line-height: 1.8;
+  margin-bottom: 10.75rem;
+}
+#about .row .txt h4 {
+  font-family: "Lobster";
+  font-size: 2.5rem;
+}
+#about .row .about-left1 {
+  background: url(/images/about-middle.jpg) no-repeat 50% 50%;
+  height: 350px;
+  position: relative;
+}
+#about .row .about-left1::after {
+  content: "";
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  background: #f7d363;
+  opacity: 0.8;
+  position: absolute;
+  top: -25px;
+  right: -15px;
+}
+#about .row .about-right1 {
+  padding: 0 10px;
+}
+#about .row .about-left2 .txt {
+  text-align: right;
+}
+#about .row .about-right2 {
+  background: url(/images/sunsetbar.jpg) no-repeat 50% 50%;
+  height: 500px;
+  position: relative;
+}
+#about .row .about-right2::after {
+  content: "";
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  background: #f7d363;
+  opacity: 0.8;
+  position: absolute;
+  top: -28px;
+  left: -27px;
+  z-index: -1;
+}
+#about .row .about-left3 {
+  background: url(/images/party.jpg) no-repeat 50% 50%;
+  height: 500px;
+  position: relative;
+}
+#about .row .about-left3::after {
+  content: "";
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  background: #f7d363;
+  opacity: 0.8;
+  position: absolute;
+  top: -28px;
+  right: -27px;
+  z-index: -1;
+}
+#about .row .about-right3 {
+  padding: 0 10px;
 }/*# sourceMappingURL=comm.css.map */

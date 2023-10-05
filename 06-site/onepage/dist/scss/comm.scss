@@ -1,7 +1,8 @@
 @charset "UTF-8";
-
+@import "reset";
 $md: 768px;
 $header-height: 70px;
+$yellow: #f7d363;
 
 @media (min-width: 576px) {
     .navbar-expand-sm .navbar-collapse {
@@ -10,28 +11,196 @@ $header-height: 70px;
         justify-content: flex-end !important;
     }
 }
-.bg-zzz {
+body {
+    background: #f8ea9f;
+    color: #3a3a3a;
+}
+.bg-yellow {
     --bs-bg-opacity: 1;
-    background-color: #364629;
+    background-color: #fadb60;
 }
 
-.title {
+#header {
+    padding: 0 1.875em;
+    height: $header-height;
+}
+#main {
+    position: relative;
+    top: -70px;
+}
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    background: #3a3a3a;
+    padding: 3px 0 6px;
+    white-space: nowrap;
+    .content {
+        animation: marquee infinite 20s both linear;
+        @media (max-width: 540px) {
+            animation-duration: 10s;
+        }
+        &.uppercase {
+            span {
+                text-transform: uppercase;
+            }
+        }
+        span {
+            color: white;
+            font-size: 12px;
+            font-family: Raleway, sans-serif;
+            &.star {
+                &:before {
+                    content: "🍦";
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+    &.light {
+        background: #fcfcfc;
+        .content {
+            span {
+                color: #313131;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translatex(0);
+    }
+    to {
+        transform: translatex(-100vw);
+    }
+}
+#jumbotron {
+    height: calc(100vh - 33px);
+    position: relative;
+
+    .container {
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        bottom: 10%;
+        transform: translateX(-50%);
+    }
+}
+.wrap {
+    margin-top: $header-height;
+}
+
+.navbar-brand {
     display: flex;
-    justify-content: center;
-    margin-bottom: 3.5rem;
+    align-items: center;
+    img {
+        height: 100%;
+    }
+}
+.nav-link {
+    text-transform: capitalize;
+}
+.main-image {
+    background: url(/images/main_img.jpg) no-repeat 50% 0;
+    text-transform: uppercase;
 }
 
 .sec-g {
     padding: 6.25rem 0;
     height: 100vh;
+    .title {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3.75rem;
+        color: #fffdd8;
+        font-family: "Lobster";
+        text-shadow: #3a3a3a 3px 3px;
+        h2 {
+            font-size: 4.375rem;
+        }
+    }
 }
-#header {
-    padding: 0 1.875em;
-    height: $header-height;
-}
-#jumbotron {
-    height: 100vh;
-}
-.wrap {
-    margin-top: $header-height;
+
+#about {
+    height: 220vh;
+    .desc {
+        text-align: center;
+        line-height: 1.8;
+        margin-bottom: 10.75rem;
+    }
+    .row {
+        .txt {
+            h4 {
+                font-family: "Lobster";
+                font-size: 2.5rem;
+            }
+        }
+        // private beach
+        .about-left1 {
+            background: url(/images/about-middle.jpg) no-repeat 50% 50%;
+            height: 350px;
+            position: relative;
+            &::after {
+                content: "";
+                width: 3.125rem;
+                height: 3.125rem;
+                border-radius: 50%;
+                background: $yellow;
+                opacity: 0.8;
+                position: absolute;
+                top: -25px;
+                right: -15px;
+                // z-index: -1;
+            }
+        }
+        .about-right1 {
+            padding: 0 10px;
+        }
+
+        // sunsetbar
+        .about-left2 {
+            .txt {
+                text-align: right;
+            }
+        }
+        .about-right2 {
+            background: url(/images/sunsetbar.jpg) no-repeat 50% 50%;
+            height: 500px;
+            position: relative;
+            &::after {
+                content: "";
+                width: 3.125rem;
+                height: 3.125rem;
+                border-radius: 50%;
+                background: $yellow;
+                opacity: 0.8;
+                position: absolute;
+                top: -28px;
+                left: -27px;
+                z-index: -1;
+            }
+        }
+        // afterparty
+        .about-left3 {
+            background: url(/images/party.jpg) no-repeat 50% 50%;
+            height: 500px;
+            position: relative;
+            &::after {
+                content: "";
+                width: 3.125rem;
+                height: 3.125rem;
+                border-radius: 50%;
+                background: $yellow;
+                opacity: 0.8;
+                position: absolute;
+                top: -28px;
+                right: -27px;
+                z-index: -1;
+            }
+        }
+        .about-right3 {
+            padding: 0 10px;
+        }
+    }
 }
