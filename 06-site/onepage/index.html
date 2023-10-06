@@ -27,8 +27,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/ScrollMagic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/animation.gsap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+
         <script defer src="./dist/js/comm.js"></script>
     </head>
     <body data-bs-spy="scroll" data-bs-target=".navbar" data-offset="80">
@@ -65,14 +68,16 @@
                 </nav>
             </header>
             <main id="main">
-                <div id="jumbotron" class="main-image p-5 text-white">
-                    <div class="container">
-                        <h1>
+                <section class="video-full">
+                    <video src="/images/Beach Loop.mp4" autoplay loop muted class="player"></video>
+                    <div class="txt-wrap" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                        <h1 class="txt-video">
                             surf all day! <br />
                             party all night!
                         </h1>
                     </div>
-                </div>
+                </section>
+
                 <div class="marquee">
                     <div class="content">
                         <span class="star">WELCOME SURFFY BEACH!</span>
@@ -91,15 +96,19 @@
                         <span class="star">WELCOME SURFFY BEACH!</span>
                     </div>
                 </div>
-                <section id="about" class="sec-g" class="t sec-g">
+
+                <section id="about" class="sec-g">
                     <div class="container">
                         <div class="title"><h2>about</h2></div>
                         <div class="desc">
                             <p>
-                                1km구간에 걸쳐 펼쳐진 서핑 전용 해변과<br />
-                                스위밍존, 빈백존, 힐링존 등 온전한 휴식을 즐길 수 있는 공간으로<br />
-                                구성된 서피비치는 이국적인 풍광의 릴렉스 비치이자 <br />바이브 넘치는 짜릿한 자유를
-                                만끽할 수 있는 <br />모두를 위한 플레이 그라운드입니다.
+                                Exotic excitement at a pristine beach that has been opened for the first time in 40
+                                years! <br />
+                                SurfyyBeach, which consists of a 1km-long surfing beach, a swimming zone, <br />a bean
+                                bag zone, and a healing zone, is a place where you can enjoy a full rest. <br />
+                                It is a relaxing beach with tropical scenery and a playground <br />
+                                for everyone who wants to enjoy <br />
+                                a thrilling atmosphere full of lush vibes.
                             </p>
                         </div>
                         <div class="row">
@@ -123,36 +132,100 @@
                     </div>
                 </section>
                 <section id="activity" class="sec-g">
-                    <div class="container">
+                    <div class="inner">
+                        <ul class="item-wrap">
+                            <li class="item item1"><img src="/images/item_01.jpg" alt="" />ddddff</li>
+                            <li class="item item2"><img src="/images/item_02.jpg" alt="" /></li>
+                            <li class="item item3"><img src="/images/item_03.jpg" alt="" /></li>
+                            <li class="item item4"><img src="/images/item_04.jpg" alt="" /></li>
+                            <li class="item item5"><img src="/images/item_05.jpg" alt="" /></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section-items text-white">
+                    <div class="scroll-slider sec-g">
                         <div class="title"><h2>activity</h2></div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <h2>제목</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, facilis. Tenetur rem
-                                    quidem iure, officiis ea animi, quasi vero voluptates et obcaecati, corporis ullam
-                                    non! Ratione fuga dignissimos blanditiis aperiam!
-                                </p>
-                            </div>
-                            <div class="col-sm-4">
-                                <h2>제목</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi deserunt amet
-                                    impedit. Sed, animi error.
-                                </p>
-                            </div>
-                            <div class="col-sm-4">
-                                <h2>제목</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi deserunt amet
-                                    impedit. Sed, animi error.
-                                </p>
-                            </div>
+                        <div class="scroll-wrapper">
+                            <article class="item scroll-slide">
+                                <div class="scroll-line"></div>
+                                <div class="item-container">
+                                    <div class="item-image">
+                                        <img
+                                            src="https://images.unsplash.com/photo-1510154328089-bdd27fc4ff66?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a8096fff6bf58a9b503f2d01cede364c&auto=format&fit=crop&w=1936&q=80"
+                                            width="700px"
+                                            alt="Image"
+                                        />
+                                    </div>
+                                    <div class="item-body">
+                                        <h2 class="item-title">Grand Hotel</h2>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem error
+                                            mollitia provident.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="item scroll-slide">
+                                <div class="item-container">
+                                    <div class="item-image">
+                                        <img
+                                            src="https://images.unsplash.com/photo-1508433957232-3107f5fd5995?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=33a01492098edf3e26f986c0ef1a1ff3&auto=format&fit=crop&w=1964&q=80"
+                                            width="700px"
+                                            alt="Image"
+                                        />
+                                    </div>
+                                    <div class="item-body">
+                                        <h2 class="item-title">Wall Street</h2>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem error
+                                            mollitia provident.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="item scroll-slide">
+                                <div class="scroll-line"></div>
+                                <div class="item-container">
+                                    <div class="item-image">
+                                        <img
+                                            src="https://images.unsplash.com/photo-1510154328089-bdd27fc4ff66?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a8096fff6bf58a9b503f2d01cede364c&auto=format&fit=crop&w=1936&q=80"
+                                            width="700px"
+                                            alt="Image"
+                                        />
+                                    </div>
+                                    <div class="item-body">
+                                        <h2 class="item-title">Grand Hotel</h2>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem error
+                                            mollitia provident.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="item scroll-slide">
+                                <div class="item-container">
+                                    <div class="item-image">
+                                        <img
+                                            src="https://images.unsplash.com/photo-1508433957232-3107f5fd5995?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=33a01492098edf3e26f986c0ef1a1ff3&auto=format&fit=crop&w=1964&q=80"
+                                            width="700px"
+                                            alt="Image"
+                                        />
+                                    </div>
+                                    <div class="item-body">
+                                        <h2 class="item-title">Wall Street</h2>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem error
+                                            mollitia provident.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
                         </div>
                     </div>
                 </section>
 
-                <section id="contact" class="sec-g" class="sec-g">
+                <section id="contact" class="sec-g">
                     <div class="container">
                         <div class="title"><h2>contact</h2></div>
                         <div class="row">
