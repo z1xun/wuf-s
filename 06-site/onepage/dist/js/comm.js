@@ -1,29 +1,6 @@
-// const headerEl = document.querySelector("#header");
-
-// //페이지에 스크롤 이벤트 추가
-// window.addEventListener(
-//     "scroll",
-//     _.throttle(function () {
-//         console.log(window.scrollY);
-
-//         if (window.scrollY > 200) {
-//             //페이지 스크롤 위치가 200px보다 크면
-//             gsap.to(headerEl, 0.6, {
-//                 opacity: 0,
-//                 display: "none",
-//             });
-//         } else {
-//             //페이지 스크롤 위치가 200px보다 작으면
-//             gsap.to(headerEl, 0.6, {
-//                 opacity: 1,
-//                 display: "block",
-//             });
-//         }
-//     }, 300)
-// );
 $(window).scroll(function () {
     var scroll = $(window).scrollTop();
-    console.log(scroll);
+    // console.log(scroll);
     if (scroll >= 900) {
         //console.log('a');
         $("#header").addClass("active");
@@ -137,3 +114,63 @@ $(window).scroll(function () {
         scrollSlider();
     });
 })(jQuery);
+
+const pTag1 = document.querySelector(".first-parallel");
+const pTag2 = document.querySelector(".second-parallel");
+const pTag3 = document.querySelector(".third-parallel");
+const pTag4 = document.querySelector(".forth-parallel");
+
+const textArr1 = " surf all day! party all night!".split(" ");
+const textArr2 = " surf all day! party all night!".split(" ");
+const textArr3 = " surf all day! party all night!".split(" ");
+const textArr4 = " surf all day! party all night!".split(" ");
+
+let count1 = 0;
+let count2 = 0;
+let count3 = 0;
+let count4 = 0;
+
+initTexts(pTag1, textArr1);
+initTexts(pTag2, textArr2);
+initTexts(pTag3, textArr3);
+initTexts(pTag4, textArr4);
+
+function initTexts(element, textArray) {
+    textArray.push(...textArray);
+    for (let i = 0; i < textArray.length; i++) {
+        element.innerText += `${textArray[i]}\u00A0\u00A0\u00A0\u00A0`;
+    }
+}
+
+function marqueeText(count, element, direction) {
+    if (count > element.scrollWidth / 2) {
+        element.style.transform = `translate3d(0, 0, 0)`;
+        count = 0;
+    }
+    element.style.transform = `translate3d(${direction * count}px, 0, 0)`;
+
+    return count;
+}
+
+function animate() {
+    count1++;
+    count2++;
+    count3++;
+    count4++;
+
+    count1 = marqueeText(count1, pTag1, -1);
+    count2 = marqueeText(count2, pTag2, 1);
+    count3 = marqueeText(count3, pTag3, -1);
+    count4 = marqueeText(count4, pTag4, 1);
+
+    window.requestAnimationFrame(animate);
+}
+
+function scrollHandler() {
+    count1 += 15;
+    count2 += 15;
+    count3 += 15;
+    count4 += 15;
+}
+window.addEventListener("scroll", scrollHandler);
+animate();

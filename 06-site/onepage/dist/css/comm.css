@@ -287,6 +287,16 @@ body {
   width: 100%;
   height: calc(100vh - 33px);
   overflow: hidden;
+  position: relative;
+}
+.video-full::after {
+  content: "";
+  background-color: rgba(49, 49, 49, 0.1);
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  position: absolute;
 }
 .video-full .player {
   position: absolute;
@@ -300,15 +310,17 @@ body {
 }
 .video-full .txt-wrap {
   z-index: 1;
-  width: 40rem;
+  width: 50rem;
   text-align: center;
   color: #fefefe;
 }
 .video-full .txt-wrap .txt-video {
+  font-family: "Lobster";
   line-height: 1.25;
-  margin: 10rem 0;
-  font-size: 3.375rem;
+  margin: 6rem 0;
+  font-size: 7.375rem;
   text-transform: capitalize;
+  opacity: 0.8;
 }
 
 .marquee {
@@ -354,18 +366,6 @@ body {
     transform: translatex(-100vw);
   }
 }
-#jumbotron {
-  height: calc(100vh - 33px);
-  position: relative;
-}
-#jumbotron .container {
-  text-align: center;
-  position: absolute;
-  left: 50%;
-  bottom: 10%;
-  transform: translateX(-50%);
-}
-
 .wrap {
   overflow: hidden;
 }
@@ -404,15 +404,16 @@ body {
 }
 
 #about {
-  height: 220vh;
+  height: 225vh;
+  font-family: "Lobster";
 }
 #about .desc {
   text-align: center;
+  font-size: 1.125rem;
   line-height: 1.8;
   margin-bottom: 10.75rem;
 }
 #about .row .txt h4 {
-  font-family: "Lobster";
   font-size: 2.5rem;
 }
 #about .row .about-left1 {
@@ -430,7 +431,6 @@ body {
   position: absolute;
   top: -25px;
   right: -15px;
-  z-index: -1;
 }
 #about .row .about-right1 {
   padding: 0 10px;
@@ -453,7 +453,6 @@ body {
   position: absolute;
   top: -28px;
   left: -27px;
-  z-index: -1;
 }
 #about .row .about-left3 {
   background: url(/images/party.jpg) no-repeat 50% 50%;
@@ -470,32 +469,19 @@ body {
   position: absolute;
   top: -28px;
   right: -27px;
-  z-index: -1;
 }
 #about .row .about-right3 {
   padding: 0 10px;
 }
 
-#activity .item-wrap {
-  display: flex;
-}
-#activity .item-wrap .item {
-  height: 550px;
-  background-color: rgba(255, 255, 255, 0.7);
-  margin-right: 2.625rem;
-  border-radius: 20px;
-  box-shadow: #3a3a3a 6px 6px;
-}
-#activity .item-wrap .item img {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.inner {
-  margin: 0 0.625rem;
+#activity .title {
+  padding-top: 2.25em;
+  margin-bottom: 4.75em;
 }
 
 .scroll-slider {
+  background-image: url(/images/bg-act.jpg);
+  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
   display: block;
@@ -527,7 +513,7 @@ body {
 .item {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100%;
 }
 .item-container {
@@ -536,7 +522,10 @@ body {
 .item-title {
   font-size: 4vw;
   font-weight: bold;
-  line-height: 1;
+  line-height: 1.2;
+  text-transform: capitalize;
+  color: #fffdd8;
+  font-family: "Lobster";
 }
 @media (min-width: 40em) {
   .item-body {
@@ -546,4 +535,86 @@ body {
     width: 50%;
     transform: translate(-25%, -50%);
   }
+}
+
+.cover {
+  width: 100%;
+  margin-bottom: 10vw;
+  display: flex;
+  background-color: #b0d8e4;
+  color: #fff;
+  font-family: "Lobster";
+}
+
+.cover:nth-child(1) {
+  transform: rotate(-2deg);
+}
+
+.cover:nth-child(2) {
+  transform: rotate(2deg);
+  background-color: #f7d363;
+  justify-content: flex-end;
+}
+
+.cover:nth-child(3) {
+  transform: rotate(-2deg);
+}
+
+.cover:nth-child(4) {
+  transform: rotate(2deg);
+  background-color: #f7d363;
+  justify-content: flex-end;
+}
+
+#contact .inner {
+  position: relative;
+}
+#contact .inner .con-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 37.5rem;
+  width: 70%;
+  margin: 0 auto;
+  background: #fffdd8;
+  border-radius: 1.25em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+#contact .inner .con-box .map {
+  width: 50%;
+  overflow: hidden;
+}
+#contact .inner .con-box .map iframe {
+  width: 500px;
+  height: 450px;
+}
+#contact .inner .con-box .con-desc {
+  width: 30%;
+}
+#contact .inner .con-box .con-desc li {
+  font-size: 1rem;
+  margin-bottom: 0.825rem;
+  color: #313131;
+  word-break: keep-all;
+}
+#contact .inner .con-box .con-desc li span {
+  color: #f7d363;
+  font-size: 1.75rem;
+  font-family: "Lobster";
+  margin-right: 0.3rem;
+}
+#contact .inner .con-box .con-desc li:last-child span {
+  display: block;
+}
+
+#footer {
+  background: #faf2ad;
+  color: #313131;
+  text-align: center;
+  font-size: 0.625rem;
+  padding: 4px;
 }/*# sourceMappingURL=comm.css.map */
