@@ -327,45 +327,41 @@ body {
   width: 100%;
   overflow: hidden;
   background: #fadb60;
-  padding: 3px 0 6px;
+  padding: 6px;
   white-space: nowrap;
+  position: relative;
 }
-.marquee .content {
-  animation: marquee infinite 20s both linear;
+.marquee .scroll {
+  width: 100%;
+  display: flex;
 }
-@media (max-width: 540px) {
-  .marquee .content {
-    animation-duration: 10s;
+.marquee .scroll div {
+  color: #fff;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  animation: loop 30s linear infinite;
+}
+.marquee .scroll .second {
+  animation: loop2 30s linear infinite;
+  animation-delay: -15s;
+}
+@keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
-.marquee .content.uppercase span {
-  text-transform: uppercase;
-}
-.marquee .content span {
-  color: white;
-  font-size: 12px;
-  font-family: Raleway, sans-serif;
-}
-.marquee .content span.star:before {
-  content: "🍦";
-  padding: 0 20px;
-}
-.marquee.light {
-  background: #fcfcfc;
-}
-.marquee.light .content span {
-  color: #313131;
-  font-weight: bold;
+@keyframes loop2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
 }
 
-@keyframes marquee {
-  from {
-    transform: translatex(0);
-  }
-  to {
-    transform: translatex(-100vw);
-  }
-}
 .wrap {
   overflow: hidden;
 }
@@ -578,7 +574,6 @@ body {
   width: 70%;
   margin: 0 auto;
   background: #fffdd8;
-  border-radius: 1.25em;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -597,7 +592,7 @@ body {
 }
 #contact .inner .con-box .con-desc li {
   font-size: 1rem;
-  margin-bottom: 0.825rem;
+  margin-bottom: 1.875rem;
   color: #313131;
   word-break: keep-all;
 }
