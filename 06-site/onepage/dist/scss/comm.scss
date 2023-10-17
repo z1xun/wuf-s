@@ -16,6 +16,7 @@ $text-color: #fffdd8;
 body {
     background: #f8ea9f;
     color: #3a3a3a;
+    cursor: url(/images/cursor.png) 4 5, auto;
 }
 
 #header {
@@ -153,6 +154,7 @@ body {
         font-size: 1.125rem;
         line-height: 1.8;
         margin-bottom: 10.75rem;
+        font-family: "Noto sans kr";
     }
     .row {
         .txt {
@@ -235,6 +237,7 @@ body {
 }
 .scroll-slider {
     background-image: url(/images/bg-act.jpg);
+
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
@@ -277,11 +280,12 @@ body {
     }
     &-title {
         font-size: 4vw;
-        font-weight: bold;
+        font-weight: lighter;
         line-height: 1.2;
         text-transform: capitalize;
         color: $text-color;
         font-family: "Lobster";
+        text-shadow: 1px 1px 2px #6f6f6f;
     }
     &-body {
         @media (min-width: 40em) {
